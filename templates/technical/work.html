@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Work Experience - Bhaskar Garg{% endblock %}
+
+{% block content %}
+<main>
+    <section class="detail-section">
+        <a href="/technical" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Technical
+        </a>
+
+        <div class="detail-header" data-aos="fade-up">
+            <h2>Work Experience</h2>
+            <p>Professional Journey at Intel</p>
+        </div>
+
+        <div class="detail-content" data-aos="fade-up">
+            <img src="{{ url_for('static', filename='media/WhatsApp Image 2025-05-19 at 11.41.08_7c2e8829.jpg') }}" alt="Intel Work" class="detail-image">
+            
+            <div class="detail-info">
+                <div>
+                    <h3>FPGA Design Engineer</h3>
+                    <p>Duration: 2023 - Present</p>
+                    <ul>
+                        <li>FPGA Development and Implementation</li>
+                        <li>PCB Design and Manufacturing</li>
+                        <li>System Integration and Testing</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Successfully implemented complex FPGA designs</li>
+                        <li>Optimized system performance by 40%</li>
+                        <li>Led PCB design and manufacturing process</li>
+                        <li>Mentored junior engineers</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li>VHDL/Verilog</li>
+                        <li>Xilinx/Intel FPGA Tools</li>
+                        <li>PCB Design Software</li>
+                        <li>System Integration Tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %} 

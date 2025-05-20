@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Bhaskar Garg{% endblock %}
+
+{% block content %}
+<section class="projects-header" data-aos="fade-up">
+    <h1>My Projects</h1>
+    <p>Explore my portfolio of engineering and technology projects</p>
+</section>
+
+<section class="projects-grid">
+    <div class="project-item" data-aos="fade-up">
+        <div class="project-image">
+            <img src="{{ url_for('static', filename='media/FPGA_AIRQUALITY.pdf') }}" alt="FPGA Air Quality Project">
+        </div>
+        <div class="project-details">
+            <h2>FPGA Air Quality Monitoring System</h2>
+            <p class="project-description">
+                An advanced air quality monitoring system implemented on FPGA with real-time data processing capabilities.
+                The system features:
+            </p>
+            <ul class="project-features">
+                <li>Real-time air quality data processing</li>
+                <li>Custom FPGA implementation</li>
+                <li>Advanced sensor integration</li>
+                <li>Data visualization and analysis</li>
+            </ul>
+            <a href="{{ url_for('static', filename='media/FPGA_AIRQUALITY.pdf') }}" class="project-link" target="_blank">View Project Report</a>
+        </div>
+    </div>
+
+    <div class="project-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-image">
+            <img src="{{ url_for('static', filename='media/COVID CARE.pdf') }}" alt="COVID Care Project">
+        </div>
+        <div class="project-details">
+            <h2>COVID Care System</h2>
+            <p class="project-description">
+                An innovative healthcare solution designed for COVID-19 management and patient care.
+                Key features include:
+            </p>
+            <ul class="project-features">
+                <li>Patient monitoring system</li>
+                <li>Healthcare resource management</li>
+                <li>Emergency response coordination</li>
+                <li>Data-driven decision support</li>
+            </ul>
+            <a href="{{ url_for('static', filename='media/COVID CARE.pdf') }}" class="project-link" target="_blank">View Project Report</a>
+        </div>
+    </div>
+
+    <div class="project-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-image">
+            <img src="{{ url_for('static', filename='media/PCB Design_BHEL.pdf') }}" alt="PCB Design Project">
+        </div>
+        <div class="project-details">
+            <h2>PCB Design for BHEL</h2>
+            <p class="project-description">
+                Professional PCB design and implementation for industrial applications at BHEL.
+                Project highlights:
+            </p>
+            <ul class="project-features">
+                <li>Industrial-grade PCB design</li>
+                <li>Power electronics integration</li>
+                <li>Signal integrity optimization</li>
+                <li>Manufacturing documentation</li>
+            </ul>
+            <a href="{{ url_for('static', filename='media/PCB Design_BHEL.pdf') }}" class="project-link" target="_blank">View Project Report</a>
+        </div>
+    </div>
+</section>
+
+<section class="project-video" data-aos="fade-up">
+    <h2>Project Showcase</h2>
+    <div class="video-container">
+        <video controls>
+            <source src="{{ url_for('static', filename='media/WhatsApp Video 2025-05-19 at 11.55.46_d067d7be.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+{% endblock %} 

@@ -1,0 +1,123 @@
+{% extends "layer3_base.html" %}
+
+{% block title %}{{ page_title }} - Bhaskar Garg{% endblock %}
+
+{% block content %}
+<main>
+    <section class="detail-section">
+        <a href="{{ back_url }}" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to {{ back_text }}
+        </a>
+
+        <div class="detail-header" data-aos="fade-up">
+            <h2>{{ page_title }}</h2>
+            <p>{{ page_subtitle }}</p>
+        </div>
+
+        <div class="detail-content">
+            <!-- Main Content Section -->
+            <div class="content-section main-content-section" data-aos="fade-up">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <div class="text-content">
+                            {{ main_content | safe }}
+                        </div>
+                    </div>
+                    <div class="content-image">
+                        <img src="{{ url_for('static', filename=main_image.path) }}" alt="{{ main_image.alt }}" class="featured-image">
+                        {% if main_image.caption %}
+                        <div class="image-caption">{{ main_image.caption }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Content Sections -->
+            {% if additional_sections %}
+            {% for section in additional_sections %}
+            <div class="content-section" data-aos="fade-up">
+                <div class="section-header">
+                    <h3>{{ section.title }}</h3>
+                    {% if section.subtitle %}
+                    <p class="section-subtitle">{{ section.subtitle }}</p>
+                    {% endif %}
+                </div>
+
+                {% if section.type == 'grid' %}
+                <div class="grid-content">
+                    {% for item in section.items %}
+                    <div class="grid-item">
+                        <div class="grid-item-header">
+                            <i class="{{ item.icon }}"></i>
+                            <h4>{{ item.title }}</h4>
+                        </div>
+                        <div class="grid-item-content">
+                            {{ item.content | safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% elif section.type == 'list' %}
+                <div class="nested-list">
+                    {% for item in section.items %}
+                    <div class="list-item">
+                        <div class="list-item-header">
+                            <i class="{{ item.icon }}"></i>
+                            <h4>{{ item.title }}</h4>
+                        </div>
+                        <p class="list-item-description">{{ item.description }}</p>
+                        {% if item.subitems %}
+                        <ul class="subitems-list">
+                            {% for subitem in item.subitems %}
+                            <li>
+                                <span class="subitem-title">{{ subitem.title }}</span>
+                                <p class="subitem-description">{{ subitem.description }}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% elif section.type == 'gallery' %}
+                <div class="media-gallery">
+                    {% for media in section.items %}
+                    <div class="gallery-item">
+                        {% if media.type == 'image' %}
+                        <img src="{{ url_for('static', filename=media.path) }}" alt="{{ media.alt }}" class="detail-image">
+                        {% elif media.type == 'video' %}
+                        <video controls class="detail-video">
+                            <source src="{{ url_for('static', filename=media.path) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        {% endif %}
+                        {% if media.caption %}
+                        <div class="media-caption">{{ media.caption }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <!-- Related Documents -->
+            {% if documents %}
+            <div class="document-section" data-aos="fade-up">
+                <h3>Related Documents</h3>
+                <div class="document-grid">
+                    {% for doc in documents %}
+                    <a href="{{ url_for('static', filename=doc.path) }}" class="document-link" target="_blank">
+                        <i class="{{ doc.icon }}"></i>
+                        <span>{{ doc.title }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</main>
+{% endblock %} 

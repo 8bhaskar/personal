@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Bhaskar Garg - Portfolio{% endblock %}
+
+{% block content %}
+<div class="video-intro" id="videoIntro">
+    <video id="introVideo" autoplay muted playsinline>
+        <source src="{{ url_for('static', filename='media/WhatsApp Video 2025-05-19 at 11.55.46_d067d7be.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+        <h1>Welcome</h1>
+        <p>Scroll to explore my journey</p>
+    </div>
+</div>
+
+<main class="main-content">
+    <section class="about-preview" data-aos="fade-up">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I am a passionate engineer with expertise in FPGA development, PCB design, and embedded systems. Beyond technology, I find joy in chess, poetry, and creative expression.</p>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>FPGA Design & Implementation</li>
+                            <li>PCB Design & Manufacturing</li>
+                            <li>Embedded Systems</li>
+                            <li>Industrial Automation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Creative Pursuits</h3>
+                        <ul>
+                            <li>Chess Strategy</li>
+                            <li>Poetry Writing</li>
+                            <li>Creative Problem Solving</li>
+                            <li>Technical Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="{{ url_for('static', filename='media/WhatsApp Image 2025-05-19 at 11.47.49_23442333.jpg') }}" alt="Bhaskar Garg">
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %} 

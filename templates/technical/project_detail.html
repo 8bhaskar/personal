@@ -1,0 +1,140 @@
+{% extends "layer3_base.html" %}
+
+{% block title %}{{ project.title }} - Bhaskar Garg{% endblock %}
+
+{% block content %}
+<main>
+    <section class="detail-section">
+        <a href="/technical/projects" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Projects
+        </a>
+
+        <div class="detail-header" data-aos="fade-up">
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.subtitle }}</p>
+        </div>
+
+        <div class="detail-content" data-aos="fade-up">
+            <!-- Media Gallery -->
+            <div class="media-gallery">
+                {% for image in project.images %}
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename=image.path) }}" alt="{{ image.alt }}" class="detail-image">
+                    {% if image.caption %}
+                    <div class="media-caption">{{ image.caption }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Project Overview -->
+            <div class="content-section" data-aos="fade-up">
+                <div class="section-header">
+                    <h3>Project Overview</h3>
+                    <p class="section-subtitle">A comprehensive look at the project's goals and achievements</p>
+                </div>
+                <div class="text-content">
+                    {{ project.overview | safe }}
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="content-section" data-aos="fade-up">
+                <div class="section-header">
+                    <h3>Key Features</h3>
+                    <p class="section-subtitle">Core functionalities and capabilities</p>
+                </div>
+                <div class="nested-list">
+                    {% for feature in project.features %}
+                    <div class="list-item">
+                        <div class="list-item-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>{{ feature.title }}</h4>
+                        </div>
+                        <p class="list-item-description">{{ feature.description }}</p>
+                        {% if feature.subitems %}
+                        <ul class="subitems-list">
+                            {% for subitem in feature.subitems %}
+                            <li>
+                                <span class="subitem-title">{{ subitem.title }}</span>
+                                <p class="subitem-description">{{ subitem.description }}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Implementation Details -->
+            <div class="content-section" data-aos="fade-up">
+                <div class="section-header">
+                    <h3>Implementation Details</h3>
+                    <p class="section-subtitle">Technical architecture and development process</p>
+                </div>
+                <div class="grid-content">
+                    {% for module in project.implementation %}
+                    <div class="grid-item">
+                        <div class="grid-item-header">
+                            <i class="{{ module.icon }}"></i>
+                            <h4>{{ module.title }}</h4>
+                        </div>
+                        <div class="grid-item-content">
+                            {{ module.content | safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Results & Impact -->
+            {% if project.results %}
+            <div class="content-section" data-aos="fade-up">
+                <div class="section-header">
+                    <h3>Results & Impact</h3>
+                    <p class="section-subtitle">Project outcomes and achievements</p>
+                </div>
+                <div class="nested-list">
+                    {% for result in project.results %}
+                    <div class="list-item">
+                        <div class="list-item-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>{{ result.title }}</h4>
+                        </div>
+                        <p class="list-item-description">{{ result.description }}</p>
+                        {% if result.metrics %}
+                        <ul class="subitems-list">
+                            {% for metric in result.metrics %}
+                            <li>
+                                <span class="subitem-title">{{ metric.title }}</span>
+                                <p class="subitem-description">{{ metric.value }}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Related Documents -->
+            {% if project.documents %}
+            <div class="document-section" data-aos="fade-up">
+                <h3>Related Documents</h3>
+                <div class="document-grid">
+                    {% for doc in project.documents %}
+                    <a href="{{ url_for('static', filename=doc.path) }}" class="document-link" target="_blank">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>{{ doc.title }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</main>
+{% endblock %} 

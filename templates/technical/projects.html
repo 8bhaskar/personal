@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Bhaskar Garg{% endblock %}
+
+{% block content %}
+<main>
+    <section class="detail-section">
+        <a href="/technical" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Technical
+        </a>
+
+        <div class="detail-header" data-aos="fade-up">
+            <h2>Technical Projects</h2>
+            <p>Innovative Solutions & Implementations</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='media/FPGA_AIRQUALITY.pdf') }}" alt="FPGA Air Quality Project">
+                </div>
+                <div class="project-content">
+                    <h3>FPGA Air Quality Monitoring System</h3>
+                    <p>Advanced air quality monitoring system with real-time data processing using FPGA technology.</p>
+                    <ul class="project-features">
+                        <li>Real-time sensor data processing</li>
+                        <li>Custom FPGA architecture</li>
+                        <li>Data visualization interface</li>
+                        <li>Automated alert system</li>
+                    </ul>
+                    <a href="/technical/projects/fpga-air-quality" class="project-link">View Project Details</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='media/COVID CARE.pdf') }}" alt="COVID Care Project">
+                </div>
+                <div class="project-content">
+                    <h3>COVID Care System</h3>
+                    <p>Innovative healthcare solution for COVID-19 management with real-time monitoring and analytics.</p>
+                    <ul class="project-features">
+                        <li>Patient monitoring system</li>
+                        <li>Resource management</li>
+                        <li>Emergency response coordination</li>
+                        <li>Data analytics dashboard</li>
+                    </ul>
+                    <a href="/technical/projects/covid-care" class="project-link">View Project Details</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='media/PCB Design_BHEL.pdf') }}" alt="PCB Design Project">
+                </div>
+                <div class="project-content">
+                    <h3>PCB Design for BHEL</h3>
+                    <p>Professional PCB design and implementation for industrial applications at BHEL.</p>
+                    <ul class="project-features">
+                        <li>Industrial-grade PCB design</li>
+                        <li>Power electronics integration</li>
+                        <li>Signal integrity optimization</li>
+                        <li>Manufacturing documentation</li>
+                    </ul>
+                    <a href="/technical/projects/pcb-design" class="project-link">View Project Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %} 

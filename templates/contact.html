@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Bhaskar Garg{% endblock %}
+
+{% block content %}
+<main>
+    <section class="section-header" data-aos="fade-up">
+        <h2>Get in Touch</h2>
+        <p>Let's connect and explore opportunities together</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-card" data-aos="fade-up">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>Reach out to me via email for professional inquiries</p>
+                <a href="mailto:bhaskargarg2000@gmail.com">bhaskargarg2000@gmail.com</a>
+            </div>
+
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>Connect with me on LinkedIn for professional networking</p>
+                <a href="https://www.linkedin.com/in/bhaskar-garg-2000/" target="_blank">Connect on LinkedIn</a>
+            </div>
+
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Check out my projects and contributions</p>
+                <a href="https://github.com/bhaskargarg2000" target="_blank">View GitHub Profile</a>
+            </div>
+        </div>
+
+        <div class="contact-form-container" data-aos="fade-up">
+            <h3>Send me a Message</h3>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %} 
