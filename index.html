@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bhaskar Garg - Engineer, Innovator, and Creative Mind">
     <title>Bhaskar's Portfolio</title>
-    <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/animations.css">
+    <link rel="stylesheet" href="./static/css/main.css">
+    <link rel="stylesheet" href="./static/css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,20 +15,20 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
-                <a href="index.html">BG</a>
+                <a href="./index.html">BG</a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="technical.html"><i class="fas fa-microchip"></i> Technical</a></li>
-                <li><a href="masti.html"><i class="fas fa-smile"></i> Masti</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="./technical.html"><i class="fas fa-microchip"></i> Technical</a></li>
+                <li><a href="./masti.html"><i class="fas fa-smile"></i> Masti</a></li>
+                <li><a href="./contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="video-intro" id="videoIntro">
         <video id="introVideo" autoplay muted playsinline>
-            <source src="static/media/WhatsApp Video 2025-05-19 at 11.55.46_d067d7be.mp4" type="video/mp4">
+            <source src="./static/media/WhatsApp Video 2025-05-19 at 11.55.46_d067d7be.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay">
@@ -70,9 +70,24 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Handle video intro
+            const videoIntro = document.getElementById('videoIntro');
+            const introVideo = document.getElementById('introVideo');
+
+            introVideo.addEventListener('ended', function() {
+                videoIntro.style.display = 'none';
+            });
+
+            // Ensure main content is visible after video
+            setTimeout(function() {
+                document.querySelector('.main-content').style.display = 'block';
+            }, 1000);
         });
     </script>
 </body>
