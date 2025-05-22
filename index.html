@@ -93,6 +93,11 @@
                 showMainContent();
             });
 
+            // Handle video error
+            introVideo.addEventListener('error', function() {
+                showMainContent();
+            });
+
             // Fallback in case video doesn't end properly
             setTimeout(function() {
                 if (!mainContent.classList.contains('visible')) {
