@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bhaskar Garg - Creative Pursuits">
+    <meta name="description" content="Bhaskar Garg - Fun Side">
     <title>Masti - Bhaskar Garg</title>
     <link rel="stylesheet" href="./static/css/main.css">
     <link rel="stylesheet" href="./static/css/animations.css">
@@ -28,93 +28,83 @@
 
     <main class="main-content visible">
         <section class="section-header" data-aos="fade-up">
-            <h2>Creative Pursuits</h2>
-            <p>Exploring the lighter side of life through chess, poetry, and co-curricular activities</p>
+            <h2>Fun Side</h2>
+            <p>Life beyond work and technology</p>
         </section>
 
-        <section class="pane-section">
-            <div class="pane" data-aos="fade-up">
-                <div class="pane-content">
-                    <div class="pane-info">
-                        <i class="fas fa-chess"></i>
-                        <div class="pane-text">
-                            <h3>Chess Journey</h3>
-                            <p>Strategic Thinking & Competitive Achievements</p>
-                            <ul>
-                                <li>Tournament Successes</li>
-                                <li>Strategic Development</li>
-                                <li>Community Involvement</li>
-                            </ul>
+        <div class="content-sections">
+            <a href="./hobbies.html" class="content-section" data-aos="fade-up">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="section-text">
+                        <h3>Hobbies</h3>
+                        <p>Photography, travel, and other personal interests</p>
+                        <div class="section-preview">
+                            <span>View Hobbies</span>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
-                    <a href="./chess.html" class="pane-link" data-layer="chess">
-                        <span>View Chess Journey</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
                 </div>
-            </div>
+            </a>
 
-            <div class="pane" data-aos="fade-up" data-aos-delay="100">
-                <div class="pane-content">
-                    <div class="pane-info">
-                        <i class="fas fa-pen-fancy"></i>
-                        <div class="pane-text">
-                            <h3>Poetry</h3>
-                            <p>Creative Expression Through Words</p>
-                            <ul>
-                                <li>Personal Reflections</li>
-                                <li>Social Observations</li>
-                                <li>Emotional Experiences</li>
-                            </ul>
+            <a href="./travel.html" class="content-section" data-aos="fade-up">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="section-text">
+                        <h3>Travel</h3>
+                        <p>Adventures and experiences around the world</p>
+                        <div class="section-preview">
+                            <span>View Travel</span>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
-                    <a href="./poetry.html" class="pane-link" data-layer="poetry">
-                        <span>Read Poetry</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
                 </div>
-            </div>
+            </a>
 
-            <div class="pane" data-aos="fade-up" data-aos-delay="200">
-                <div class="pane-content">
-                    <div class="pane-info">
-                        <i class="fas fa-users"></i>
-                        <div class="pane-text">
-                            <h3>Co-curricular Activities</h3>
-                            <p>Leadership & Personal Growth</p>
-                            <ul>
-                                <li>Leadership Roles</li>
-                                <li>Community Service</li>
-                                <li>Event Organization</li>
-                            </ul>
+            <a href="./photography.html" class="content-section" data-aos="fade-up">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="section-text">
+                        <h3>Photography</h3>
+                        <p>Capturing moments and memories through lens</p>
+                        <div class="section-preview">
+                            <span>View Photos</span>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
-                    <a href="./co-curricular.html" class="pane-link" data-layer="co-curricular">
-                        <span>View Activities</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
                 </div>
-            </div>
-        </section>
+            </a>
+
+            <a href="./fun-facts.html" class="content-section" data-aos="fade-up">
+                <div class="section-content">
+                    <div class="section-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="section-text">
+                        <h3>Fun Facts</h3>
+                        <p>Interesting tidbits and personal anecdotes</p>
+                        <div class="section-preview">
+                            <span>View Fun Facts</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
             AOS.init({
                 duration: 800,
                 once: true
-            });
-
-            // Handle layer transitions
-            const paneLinks = document.querySelectorAll('.pane-link');
-            paneLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetLayer = this.getAttribute('data-layer');
-                    window.location.href = this.getAttribute('href');
-                });
             });
 
             // Handle navigation

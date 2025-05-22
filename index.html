@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bhaskar Garg - Engineer, Innovator, and Creative Mind">
-    <title>Bhaskar's Portfolio</title>
+    <meta name="description" content="Bhaskar Garg - FPGA Engineer & Innovator">
+    <title>Bhaskar Garg</title>
     <link rel="stylesheet" href="./static/css/main.css">
     <link rel="stylesheet" href="./static/css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,87 +26,42 @@
         </div>
     </nav>
 
-    <div class="video-intro" id="videoIntro">
-        <video id="introVideo" autoplay muted playsinline>
-            <source src="./static/media/WhatsApp Video 2025-05-19 at 11.55.46_d067d7be.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay">
-            <h1>Welcome</h1>
-            <p>Scroll to explore my journey</p>
-        </div>
-    </div>
+    <main class="main-content visible">
+        <section class="section-header" data-aos="fade-up">
+            <h2>About Me</h2>
+            <p>FPGA Engineer & Innovator</p>
+        </section>
 
-    <main class="main-content">
-        <section class="about-preview" data-aos="fade-up">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>I am a passionate engineer with expertise in FPGA development, PCB design, and embedded systems. Beyond technology, I find joy in chess, poetry, and creative expression.</p>
-                    <div class="skills-container">
-                        <div class="skill-category">
-                            <h3>Technical Skills</h3>
-                            <ul>
-                                <li>FPGA Design & Implementation</li>
-                                <li>PCB Design & Manufacturing</li>
-                                <li>Embedded Systems</li>
-                                <li>Industrial Automation</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Creative Pursuits</h3>
-                            <ul>
-                                <li>Chess Strategy</li>
-                                <li>Poetry Writing</li>
-                                <li>Creative Problem Solving</li>
-                                <li>Technical Documentation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image" data-aos="fade-left">
-                    <img src="./static/media/profile.jpg" alt="Bhaskar Garg">
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <h3>Hello, I'm Bhaskar Garg</h3>
+                <p>I'm a passionate FPGA Engineer with a strong background in hardware design and innovation. Currently working at Intel, I specialize in developing cutting-edge FPGA solutions and have contributed to several patents in the field.</p>
+                <p>My expertise spans across:</p>
+                <ul>
+                    <li>FPGA Architecture Design</li>
+                    <li>Hardware Acceleration</li>
+                    <li>System Integration</li>
+                    <li>Performance Optimization</li>
+                </ul>
+                <p>When I'm not working on hardware designs, you can find me exploring photography, traveling to new places, or engaging in strategic games like chess.</p>
+                <div class="about-cta">
+                    <a href="./technical.html" class="cta-button">View Technical Work</a>
+                    <a href="./contact.html" class="cta-button secondary">Get in Touch</a>
                 </div>
             </div>
-        </section>
+            <div class="about-image" data-aos="fade-left">
+                <img src="./static/images/profile.jpg" alt="Bhaskar Garg" onerror="this.src='./static/images/placeholder.jpg'">
+            </div>
+        </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
             AOS.init({
                 duration: 800,
                 once: true
             });
-
-            // Handle video intro
-            const videoIntro = document.getElementById('videoIntro');
-            const introVideo = document.getElementById('introVideo');
-            const mainContent = document.querySelector('.main-content');
-
-            // Function to show main content
-            function showMainContent() {
-                videoIntro.classList.add('hidden');
-                mainContent.classList.add('visible');
-            }
-
-            // Handle video end
-            introVideo.addEventListener('ended', function() {
-                showMainContent();
-            });
-
-            // Handle video error
-            introVideo.addEventListener('error', function() {
-                showMainContent();
-            });
-
-            // Fallback in case video doesn't end properly
-            setTimeout(function() {
-                if (!mainContent.classList.contains('visible')) {
-                    showMainContent();
-                }
-            }, 5000);
 
             // Handle navigation
             const navLinks = document.querySelectorAll('.nav-links a');
