@@ -58,11 +58,13 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: var(--white);
+    z-index: 10000;
 }
 
 .video-overlay h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
 }
 
 .video-overlay p {
@@ -135,6 +137,14 @@ body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.main-content.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Hero Section */
@@ -1378,4 +1388,28 @@ footer {
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; } 
+.mb-4 { margin-bottom: 2rem; }
+
+/* Layer 2 Content */
+.layer2-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.layer2-content.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Layer 3 Content */
+.layer3-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.layer3-content.active {
+    display: block;
+    opacity: 1;
+} 
