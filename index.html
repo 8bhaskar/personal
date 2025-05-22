@@ -26,7 +26,18 @@
         </div>
     </nav>
 
-    <main class="main-content visible">
+    <div class="video-intro" id="videoIntro">
+        <video id="introVideo" autoplay muted playsinline>
+            <source src="./WhatsApp Video 2025-05-19 at 11.55.46_d067d7be.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+            <h1>Welcome</h1>
+            <p>Scroll to explore my journey</p>
+        </div>
+    </div>
+
+    <main class="main-content">
         <section class="section-header" data-aos="fade-up">
             <h2>About Me</h2>
             <p>FPGA Engineer & Innovator</p>
@@ -50,7 +61,7 @@
                 </div>
             </div>
             <div class="about-image" data-aos="fade-left">
-                <img src="./About Me.jpg" alt="Bhaskar Garg" onerror="this.src='./static/images/placeholder.jpg'">
+                <img src="./About Me.jpg" alt="Bhaskar Garg">
             </div>
         </div>
     </main>
@@ -62,6 +73,34 @@
                 duration: 800,
                 once: true
             });
+
+            // Handle video intro
+            const videoIntro = document.getElementById('videoIntro');
+            const introVideo = document.getElementById('introVideo');
+            const mainContent = document.querySelector('.main-content');
+
+            // Function to show main content
+            function showMainContent() {
+                videoIntro.classList.add('hidden');
+                mainContent.classList.add('visible');
+            }
+
+            // Handle video end
+            introVideo.addEventListener('ended', function() {
+                showMainContent();
+            });
+
+            // Handle video error
+            introVideo.addEventListener('error', function() {
+                showMainContent();
+            });
+
+            // Fallback in case video doesn't end properly
+            setTimeout(function() {
+                if (!mainContent.classList.contains('visible')) {
+                    showMainContent();
+                }
+            }, 5000);
 
             // Handle navigation
             const navLinks = document.querySelectorAll('.nav-links a');
