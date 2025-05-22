@@ -1498,4 +1498,76 @@ footer {
     .cta-button {
         width: 100%;
     }
+}
+
+/* Project Section Styles */
+.project-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-section:last-child {
+    margin-bottom: 0;
+}
+
+.project-section .about-text h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.project-section .about-text p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-section .about-text ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.project-section .about-text ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-section .about-text ul li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.project-section .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-section .about-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Design for Project Sections */
+@media (max-width: 768px) {
+    .project-section {
+        padding: 1.5rem;
+    }
+
+    .project-section .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-section .about-text p {
+        font-size: 1rem;
+    }
 } 
