@@ -1376,180 +1376,98 @@ footer {
 .mb-3 { margin-bottom: 1.5rem; }
 .mb-4 { margin-bottom: 2rem; }
 
-/* Layer 2 Content */
-.layer2-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.layer2-content.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Layer 3 Content */
-.layer3-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.layer3-content.active {
-    display: block;
-    opacity: 1;
-}
-
-/* About Section Styles */
-.about-cta {
+/* Layer 2 Content Styles */
+.content-sections {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    max-width: 100%;
 }
 
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.cta-button.secondary {
-    background: var(--light-bg);
-    color: var(--primary-color);
-}
-
-.cta-button.secondary:hover {
-    background: var(--border-color);
-}
-
-/* Section Header Styles */
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 0 2rem;
-}
-
-.section-header h2 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.section-header p {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .about-text {
-        max-width: 100%;
-    }
-
-    .about-image {
-        max-width: 100%;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .about-cta {
-        flex-direction: column;
-    }
-
-    .cta-button {
-        width: 100%;
-    }
-}
-
-/* Project Section Styles */
-.project-section {
-    margin-bottom: 4rem;
-    padding: 2rem;
+.content-section {
+    width: 100%;
     background: var(--white);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
+    overflow: hidden;
 }
 
-.project-section:last-child {
-    margin-bottom: 0;
+.content-section:hover {
+    transform: translateY(-5px);
 }
 
-.project-section .about-text h3 {
+.section-content {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.section-icon {
+    flex: 0 0 80px;
+    height: 80px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-icon i {
+    font-size: 2rem;
     color: var(--primary-color);
-    font-size: 1.8rem;
+}
+
+.section-text {
+    flex: 1;
+}
+
+.section-text h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-text p {
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
-.project-section .about-text p {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.project-section .about-text ul {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.project-section .about-text ul li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.project-section .about-text ul li::before {
-    content: "•";
+.section-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--secondary-color);
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
+    font-weight: 500;
 }
 
-.project-section .about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.section-preview i {
     transition: transform 0.3s ease;
 }
 
-.project-section .about-image img:hover {
-    transform: scale(1.02);
+.content-section:hover .section-preview i {
+    transform: translateX(5px);
 }
 
-/* Responsive Design for Project Sections */
+/* Responsive Design for Layer 2 */
 @media (max-width: 768px) {
-    .project-section {
+    .section-content {
+        flex-direction: column;
+        text-align: center;
         padding: 1.5rem;
     }
 
-    .project-section .about-text h3 {
-        font-size: 1.5rem;
+    .section-icon {
+        margin-bottom: 1rem;
     }
 
-    .project-section .about-text p {
-        font-size: 1rem;
+    .section-preview {
+        justify-content: center;
     }
 } 
